@@ -1,0 +1,15 @@
+<div class="constructor">
+    <label for="placa">Placa</label>
+    <br>
+    <input #plateEl (change)="plateChanged()" [(ngModel)]="plate" name="placa" id="placa" type="text" placeholder="_ _ _  _ _ _ _">
+    <br>
+    <label for="placa">Fecha</label>
+    <br>
+    <input #dateEl type="date" [(ngModel)]="date" placeholder="Fecha">
+    <br>
+    <label for="placa">Hora</label>
+    <br>
+    <input #timeEl type="time" [(ngModel)]="time" placeholder="Hora">
+    <br>
+    <button (click)="verify()">Verificar</button>
+</div>
