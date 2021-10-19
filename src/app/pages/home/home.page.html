@@ -2,9 +2,9 @@
     <div class="form">
         <label>Placa</label>
         <br>
-        <input class="letters" #plateLettersEl (ngModelChange)="plateLettersChanged($event)" [ngModel]="plateLetters" pattern="\d*" name="placa" id="placa" type="text" maxlength="3" placeholder="###">
+        <input class="letters" #plateLettersEl (input)="plateLettersChanged()" [(ngModel)]="plateLetters" pattern="\d*" name="placa" id="placa" type="text" maxlength="3" placeholder="###">
         <span> - </span>
-        <input class="numbers" #plateNumbersEl (ngModelChange)="plateNumbersChanged($event)" [ngModel]="plateNumbers" name="placa" id="placa" type="text" maxLength="4" placeholder="####">
+        <input class="numbers" #plateNumbersEl (input)="plateNumbersChanged()" [(ngModel)]="plateNumbers" name="placa" id="placa" type="text" maxLength="4" placeholder="####">
         <br>
         <label>Fecha</label>
         <br>
