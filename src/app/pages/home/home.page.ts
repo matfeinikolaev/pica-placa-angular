@@ -52,8 +52,23 @@ export class HomePage {
         this.time == "" ? this.timeEl.nativeElement.classList.add("error") : this.timeEl.nativeElement.classList.remove("error");
     }
     
+    checkAllowedTime() {
+        var timeStamp = (new Date()).setHours(+this.time.split(":")[0], +this.time.split(":")[1]);
+        var restrictedTime = {
+            start1: (new Date()).setHours(7, 0),
+            start2: (new Date()).setHours(16, 0),
+            end1: (new Date()).setHours(9, 30),
+            end2: (new Date()).setHours(19, 30),
+        }
+        return (
+            (timeStamp >= restrictedTime.start1 && timeStamp <= restrictedTime.end1) 
+            || 
+            (timeStamp >= restrictedTime.start2 && timeStamp <= restrictedTime.end2)
+        );
+    }
+
     checkPicoPlaca() {
-        if  (+this.time.split(":")[0] < 7  || +this.time.split(":")[0] > 19) {
+        if  (!this.checkAllowedTime()) {
             this.allowedToDrive = true;
         } else {
             const date = new Date(this.date);
