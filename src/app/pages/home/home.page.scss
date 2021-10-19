@@ -1,0 +1,51 @@
+.container {
+    font-size: 2vw;
+    font-family: sans-serif;
+    width: 100%;
+    text-align: center;
+    .form {
+        text-align: center;
+        background-color: #FF6B01;
+        border-radius: 15px;
+        width: 20%;
+        margin: auto;
+        padding-top: 1vw;
+        padding-bottom: 2vw;
+        margin-bottom: 4vw;
+    }
+    .circle {
+        width: 10vw;
+        height: 10vw;
+        margin: auto;
+        border-radius: 100px;
+    }
+    .allowed {
+        background-color: #33a532;
+    }
+    .not-allowed {
+        background-color: #bb1e10;
+    }
+}
+
+label {
+    color: white;
+    font-weight: 700;
+    font-size: 1vw;
+    margin-right: 1vw;
+}
+
+.letters {
+    width: 3vw;
+}
+
+.numbers {
+    width: 4vw;
+}
+
+.date, .time {
+    width: 11vw;
+}
+
+.error {
+    background-color: red;
+}
