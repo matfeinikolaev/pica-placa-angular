@@ -1,15 +1,24 @@
-<div class="constructor">
-    <label for="placa">Placa</label>
-    <br>
-    <input #plateEl (change)="plateChanged()" [(ngModel)]="plate" name="placa" id="placa" type="text" placeholder="_ _ _  _ _ _ _">
-    <br>
-    <label for="placa">Fecha</label>
-    <br>
-    <input #dateEl type="date" [(ngModel)]="date" placeholder="Fecha">
-    <br>
-    <label for="placa">Hora</label>
-    <br>
-    <input #timeEl type="time" [(ngModel)]="time" placeholder="Hora">
-    <br>
-    <button (click)="verify()">Verificar</button>
+<div class="container">
+    <div class="form">
+        <label>Placa</label>
+        <br>
+        <input class="letters" #plateLettersEl (ngModelChange)="plateLettersChanged($event)" [ngModel]="plateLetters" pattern="\d*" name="placa" id="placa" type="text" maxlength="3" placeholder="###">
+        <span> - </span>
+        <input class="numbers" #plateNumbersEl (ngModelChange)="plateNumbersChanged($event)" [ngModel]="plateNumbers" name="placa" id="placa" type="text" maxLength="4" placeholder="####">
+        <br>
+        <label>Fecha</label>
+        <br>
+        <input class="date" #dateEl name="date" id="date"  type="date" (ngModelChange)="reset()" [(ngModel)]="date" placeholder="Fecha">
+        <br>
+        <label>Hora</label>
+        <br>
+        <input class="time" #timeEl type="time" name="time" id="time" (ngModelChange)="reset()" [(ngModel)]="time" placeholder="Hora">
+        <br>
+        <button (click)="verify()">Verificar</button>
+    </div>
+    
+    <div *ngIf="allowedToDrive != null">
+        <p class="circle {{ allowedToDrive ? 'allowed' : 'not-allowed' }}"></p>
+        <p>Placa {{ plateLetters }}-{{ plateNumbers }} {{ allowedToDrive ? "" : "no"}} esta permitida entrar a Quito el {{ date | date: "dd.MM.yyyy"}} a las {{ time }}</p>
+    </div>
 </div>
