@@ -22,8 +22,8 @@ Sábados, domingos y feriados: libre circulación las 24 horas del día, hasta l
 List of the days allowed are saved in the "src/assets/picoplaca-rules.json", the holidays are taken only for the 2021.
 
 ## Successfull requests
-![image](https://user-images.githubusercontent.com/45239725/137968602-8e257b87-8eed-40cb-8674-88c4cc3ce809.png)
-![image](https://user-images.githubusercontent.com/45239725/137968656-aab3d913-2a0b-41a5-a608-841342efb95c.png)
+![image](https://user-images.githubusercontent.com/45239725/137969453-0a39c773-4c57-4e0f-a574-85c5606eea3c.png)
+![image](https://user-images.githubusercontent.com/45239725/137969494-d5e6e765-9356-4499-a0c0-a87b4625fcdd.png)
 
 ## Unsuccessfull request
 ![image](https://user-images.githubusercontent.com/45239725/137965067-a81ae0b3-7283-4e97-a663-e72b3dcb2561.png)
