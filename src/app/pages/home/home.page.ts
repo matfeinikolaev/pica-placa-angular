@@ -52,7 +52,7 @@ export class HomePage {
         this.time == "" ? this.timeEl.nativeElement.classList.add("error") : this.timeEl.nativeElement.classList.remove("error");
     }
     
-    checkAllowedTime() {
+    checkRestrictedTime() {
         var timeStamp = (new Date()).setHours(+this.time.split(":")[0], +this.time.split(":")[1]);
         var restrictedTime = {
             start1: (new Date()).setHours(7, 0),
@@ -68,7 +68,7 @@ export class HomePage {
     }
 
     checkPicoPlaca() {
-        if  (!this.checkAllowedTime()) {
+        if  (!this.checkRestrictedTime()) {
             this.allowedToDrive = true;
         } else {
             const date = new Date(this.date);
