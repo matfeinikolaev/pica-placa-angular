@@ -23,36 +23,35 @@ export class HomePage {
         this.allowedToDrive = null;
     }
 
-    plateLettersChanged(val: any) {
+    plateLettersChanged() {
         this.reset();
-        if (val.match(/^[^a-zA-Z]+$/)) {
-            this.plateLettersEl.nativeElement.value = "";
-        } else {
-            this.plateLetters = val.toUpperCase();
-            this.plateLettersEl.nativeElement.value = val.toUpperCase();
-            if (this.plateLetters.length == 3) this.plateNumbersEl.nativeElement.focus();
-        }
+        this.plateLetters = this.plateLetters.replace(RegExp(/[^a-zA-Z]/), "").toUpperCase();
+        this.plateLettersEl.nativeElement.value = this.plateLetters;
+        if (this.plateLetters.length == 3) this.plateNumbersEl.nativeElement.focus();
     }
-    plateNumbersChanged(val: any) {
+
+    plateNumbersChanged() {
         this.reset();
-        if (val.match(/^[^0-9]+$/)) {
-            this.plateNumbersEl.nativeElement.value = "";
-        }
-        else {
-            this.plateNumbers = val;
-            if (this.plateNumbers.length == 4) this.dateEl.nativeElement.focus();
-        }
+        this.plateNumbers = this.plateNumbers.replace(RegExp(/[^0-9]/), "");
+        this.plateNumbersEl.nativeElement.value = this.plateNumbers;
+        if (this.plateNumbers.length == 4) this.dateEl.nativeElement.focus();
     }
+
     verify() {
+        if (this.plateLetters != "" && this.plateNumbers != "" && this.date != "" && this.time != "") {
+            this.checkPicoPlaca();
+        } else {
+            this.highlightErrors();
+        }
+    }
+
+    highlightErrors() {
         this.plateLetters == "" ? this.plateLettersEl.nativeElement.classList.add("error") : this.plateLettersEl.nativeElement.classList.remove("error");
         this.plateNumbers == "" ? this.plateNumbersEl.nativeElement.classList.add("error") : this.plateNumbersEl.nativeElement.classList.remove("error");
         this.date == "" ? this.dateEl.nativeElement.classList.add("error") : this.dateEl.nativeElement.classList.remove("error");
         this.time == "" ? this.timeEl.nativeElement.classList.add("error") : this.timeEl.nativeElement.classList.remove("error");
-
-        if (this.plateLetters != "" && this.plateNumbers != "" && this.date != "" && this.time != "") {
-            this.checkPicoPlaca();
-        }
     }
+    
     checkPicoPlaca() {
         if  (+this.time.split(":")[0] < 7  || +this.time.split(":")[0] > 19) {
             this.allowedToDrive = true;
