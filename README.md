@@ -5,7 +5,7 @@ To check you eligibility, enter your license plate in "Placa" field, date in "Fe
 If any of the fields are not filled in, those fields will be highlighted red, you have to fill them to proceed.
 
 The applicacion applies the following rules to check your eligibility:
-La restricción vehicular se aplica de 07:00 a 19:00 con el siguiente cronograma:
+La restricción vehicular se aplica 7:00am - 9:30am / 16:00pm - 19:30 con el siguiente cronograma:
 
 Lunes: no circularán las placas terminadas en los dígitos 0, 1, 2, 3
 
