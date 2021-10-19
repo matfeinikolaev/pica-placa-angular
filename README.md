@@ -28,4 +28,7 @@ List of the days allowed are saved in the "src/assets/picoplaca-rules.json", the
 ## Unsuccessfull request
 ![image](https://user-images.githubusercontent.com/45239725/137965067-a81ae0b3-7283-4e97-a663-e72b3dcb2561.png)
 
+## Some basic test
+![image](https://user-images.githubusercontent.com/45239725/137965326-a8dbfed1-fa3f-4651-ae7d-551095c7d724.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
